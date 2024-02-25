@@ -1,0 +1,46 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Login Records for <%= current_user.email%></h1>
+
+<table id="customers">
+  <thead>
+    <tr>
+      <th>Last seen</th>
+      <th>Device</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @login_records.each do |login_record| %>
+      <tr>
+        <td><%= login_record.last_seen %></td>
+        <td><%= login_record.device %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<style type="text/css">#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+}</style>
